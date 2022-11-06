@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <form action="" method="post">
+    {% csrf_token %}
+    <div>
+      <label for="name">名前</label>
+      <input type="text" id="name" name="name" value="{{ name }}">
+    </div>
+    <div>
+      <label for="searchcount">検索件数</label>
+      <input type="text" id="searchcount" name="searchcount" value="{{ searchcount }}">
+    </div>
+    <div>
+      <label for="loopyn">このアカウントを監視しますか？</label>
+      <input type="checkbox" id="loopyn" name="loopyn" value="{{ loopyn }}">
+    </div>
+    <input type="submit" value="送信する">
+  </form>
+  <p>{{negapozi}}</p>
+  <p>{{message}}<p>
+  <p></p>
+</body>
+</html>
