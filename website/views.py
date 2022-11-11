@@ -44,6 +44,16 @@ class IndexView(TemplateView):
         }
         
         return render(request,'index.html',context)
+
+class LoopView(TemplateView):
+    template_name = 'loop.html'
+    # def get(self, request, *args, **kwargs):
+    #     return render(request,'loop.html',context)
+
+class NotLoopView(TemplateView):
+    template_name = 'notloop.html'
+    # def get(self, request, *args, **kwargs):
+    #     return render(request,'notloop.html',context)
     
 
 
