@@ -27,14 +27,7 @@ class IndexView(TemplateView):
     def post(self, request, *args, **kwargs):
         Username = request.POST['name']
         Searchcount = request.POST['searchcount']
-        Loopyn = request.POST.get(' loopyn ')
-        print(Loopyn)
-        if not Loopyn == True:
-            total_score = Twitter(Username,Searchcount)
-        else:
-            
-            total_score = Twitter(Username,Searchcount)
-                # time.sleep(10)
+        total_score = Twitter(Username,Searchcount)
         negapozi_word = negapozi(negapozi_score=total_score)
         context = {
             'name':Username,
@@ -42,19 +35,18 @@ class IndexView(TemplateView):
             'message':negapozi_word,
             'negapozi':total_score
         }
-        
-        return render(request,'index.html',context)
+        if request.method == 'POST':
+            if 'loop' in request.POST:
+                return render(request,'loop.html',context)
+            elif 'notloop' in request.POST:
+                return render(request,'notloop.html',context)
 
 class LoopView(TemplateView):
     template_name = 'loop.html'
-    # def get(self, request, *args, **kwargs):
-    #     return render(request,'loop.html',context)
 
 class NotLoopView(TemplateView):
     template_name = 'notloop.html'
-    # def get(self, request, *args, **kwargs):
-    #     return render(request,'notloop.html',context)
-    
+
 
 
 # Create your views here.

@@ -11,13 +11,12 @@
       <label for="searchcount">検索件数</label>
       <input type="text" id="searchcount" name="searchcount" value="{{ searchcount }}">
     </div>
-    <div>
-      <label for="loopyn">このアカウントを監視しますか？</label>
-      <input type="checkbox" id="loopyn" name="loopyn" value="{{ loopyn }}">
-    </div>
-    <input type="submit" value="送信する">
+    <p>
+    <input type="submit" value="検索する" name="notloop">
+    <input type="submit" value="監視する" name="loop">
+    </p>
   </form>
-  <a href="/loop">loop</a>
+  {% comment %} <a href="/loop">loop</a> {% endcomment %}
   <p>{{negapozi}}</p>
   <p>{{message}}<p>
   <p></p>
