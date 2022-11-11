@@ -35,14 +35,26 @@ class IndexView(TemplateView):
             'message':negapozi_word,
             'negapozi':total_score
         }
-        if request.method == 'POST':
-            if 'loop' in request.POST:
-                return render(request,'loop.html',context)
-            elif 'notloop' in request.POST:
-                return render(request,'notloop.html',context)
+        if 'loop' in request.POST:
+            return render(request,'loop.html',context)
+        elif 'notloop' in request.POST:
+            return render(request,'notloop.html',context)
 
 class LoopView(TemplateView):
     template_name = 'loop.html'
+
+    def get(self, request, *args, **kwargs):
+        Username = request.POST['name']
+        Searchcount = request.POST['searchcount']
+        total_score = Twitter(Username,Searchcount)
+        negapozi_word = negapozi(negapozi_score=total_score)
+        context = {
+            'name':Username,
+            'searchcount':Searchcount,
+            'message':negapozi_word,
+            'negapozi':total_score
+        }
+        return 'loop.html'
 
 class NotLoopView(TemplateView):
     template_name = 'notloop.html'
