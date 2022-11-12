@@ -1,0 +1,14 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'main.css' %}">
+    </head>
+    <body>
+        {% comment %} <img src = "{% static '.jpg' %}"> {% endcomment %}
+
+        {% block main %}
+        404 not found
+        {% endblock %}
+
+    </body>

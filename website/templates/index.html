@@ -1,5 +1,6 @@
-<!DOCTYPE html>
-<html>
+{% extends "base.html" %}
+
+{% block main %}
 <body>
   <form action="" method="post">
     {% csrf_token %}
@@ -12,13 +13,12 @@
       <input type="text" id="searchcount" name="searchcount" value="{{ searchcount }}">
     </div>
     <p>
-    <input type="submit" value="検索する" name="notloop">
-    <input type="submit" value="監視する" name="loop">
+      <input type="submit" value="検索する" name="notloop">
+      <input type="submit" value="監視する" name="loop">
     </p>
   </form>
-  {% comment %} <a href="/loop">loop</a> {% endcomment %}
   <p>{{negapozi}}</p>
   <p>{{message}}<p>
-  <p></p>
+{% endblock %}
 </body>
 </html>
