@@ -1,0 +1,54 @@
+html{font-size: 100%;}
+body{line-height: 1.7; color: black;}
+a{text-decoration: none;}
+img{max-width: 100%;}
+
+.home-nav{display: flex; font-size: 1.25rem; text-transform: uppercase;
+margin-top: 34px; list-style: none; color: blue}
+.home-nav li{margin-left: 36px;}
+.home-nav a{color: #432;}
+.home-nav a:hover{color: lightblue;}
+
+.page-header{justify-content: space-between; display: flex;}
+
+.wrapper{max-width: 1100px; margin: 0 auto; padding: 0 4%;}
+
+/* HOME*/
+.home-content{text-align: center; margin-top: 10%;}
+.home-content p{font-size: 24px; margin: 10px 0 42px;}
+
+.page-title{font-size: 48px; font-family: 'philosopher', serif;
+text-transform: uppercase; font-weight: normal;}
+
+/* ボタン*/
+.button{font-size: 20px; background: black; color: #fff;}
+
+.button:hover{background: #0090aa}
+
+/* 画像*/
+.big-bg{background-size: cover; background-position: center top;}
+
+#home{background-image: url(images/imagephoto.jpg); min-height: 100vh;}
+#home .page-title{text-transform: none;}
+
+/* メイン*/
+
+#main{background-image: url(images/imagephoto.jpg); height: 270px; margin-bottom: 40px;}
+#main.page-title{text-align: center;}
+
+/* フッター*/
+footer{background: black; text-align: center; padding: 20px 0;}
+footer p{color: white; font-size: 10px}
+
+/*メイン*/
+airticle{width: 80%;}
+
+/*サイド*/
+aside{width: 20%;}
+
+.main-contents{display: flex; margin-bottom: 50px;}
+
+.post-info{position: relative; padding-top: 4px; margin-bottom: 40px;}
+
+.sub-title{font-size: 15px; padding: 0 8px 8px; border-bottom: 2px #0bd solid; font-weight: normal;}
+aside{padding: 12px, 10px;}

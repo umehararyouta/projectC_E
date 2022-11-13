@@ -1,15 +1,17 @@
-<!DOCTYPE html>
-<h1>{{name}}は{{message}}</h1>
-<a href="">入力ページに戻る</a>
-<p>loop</p>
-<p>{{name}}</p>
-<p>{{searchcount}}</p>
-<p>{{negapozi}}</p>
-<p>{{message}}</p>
+{% extends "base.html" %}
+{% block body_main %}
+    <p>{{name}}は{{message}}</p>
+    <a href="">入力ページに戻る</a>
+    <p>loop</p>
+    <p>{{name}}</p>
+    <p>{{searchcount}}</p>
+    <p>{{negapozi}}</p>
+    <p>{{message}}</p>
 
-<script>
-    const timer = 60000   
-    window.addEventListener('load',function(){
-        setInterval('location.reload()',timer);
-    });
-</script>
+    <script>
+        const timer = 60000   
+        window.addEventListener('load',function(){
+            setInterval('location.reload()',timer);
+        });
+    </script>
+{% endblock %}

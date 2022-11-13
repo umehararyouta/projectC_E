@@ -59,6 +59,16 @@ class LoopView(TemplateView):
 class NotLoopView(TemplateView):
     template_name = 'notloop.html'
 
+class AccessView(TemplateView):
+    template_name = 'access.html'
+
+class InfoView(TemplateView):
+    template_name = 'info.html'
+
+class CareView(TemplateView):
+    template_name = 'care.html'
+
+
 
 
 # Create your views here.
