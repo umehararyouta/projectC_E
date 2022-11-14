@@ -14,19 +14,21 @@
                 <nav>
                     <ul class="home-nav">
                         <li>
-                            <a href="index.html">ホーム</a>
+                            <a href="/index">ホーム</a>
                         </li>
                         <li>
-                            <a href="search.html">検知</a>
+                            <a href="/fire">炎上について</a>
                         </li>
                         <li>
-                            <a href="index.html">リンク</a>
+                            <a href="/care">炎上の対処法</a>
                         </li>
                     </ul>
                 </nav>
             </header>
             <div class="wrapper">
-                <h2 class="page-title">メイン</h2>
+                {% block maintitle %}
+                <h2 class="page-title">検索ホーム</h2>
+                {% endblock  %}
             </div class="wrapper">
             <div class="main-contents wrapper">
                 <article>
@@ -38,17 +40,17 @@
                     <h3 class="sub-title">一覧</h3>
                     <ul class="sub-menu">
                         <li>
-                            <a href="info.html">概要</a>
+                            <a href="/howtouse">使い方</a>
                         </li>
                         <li>
-                            <a href="access.html">アクセス</a>
+                            <a href="/system">システム内容</a>
                         </li>
                         <li>
-                            <a href="index.html">詳細</a>
+                            <a href="/access">制作関係者</a>
                         </li>
                     </ul>
-                    <h3 class="sub-title">一言コラム</h3>
-                    <p>何か良いのがあったら</p>
+                    <h3 class="sub-title">サブタイトル</h3>
+                    <p>サブタイトルコメント</p>
                 </aside>
             </div class="main-contents wrapper">
         </div id="main">
