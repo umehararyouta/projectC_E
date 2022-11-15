@@ -27,14 +27,7 @@ class IndexView(TemplateView):
     def post(self, request, *args, **kwargs):
         Username = request.POST['name']
         Searchcount = request.POST['searchcount']
-        Loopyn = request.POST.get(' loopyn ')
-        print(Loopyn)
-        if not Loopyn == True:
-            total_score = Twitter(Username,Searchcount)
-        else:
-            
-            total_score = Twitter(Username,Searchcount)
-                # time.sleep(10)
+        total_score = Twitter(Username,Searchcount)
         negapozi_word = negapozi(negapozi_score=total_score)
         context = {
             'name':Username,
@@ -42,9 +35,42 @@ class IndexView(TemplateView):
             'message':negapozi_word,
             'negapozi':total_score
         }
-        
-        return render(request,'index.html',context)
+        if 'loop' in request.POST:
+            return render(request,'loop.html',context)
+        elif 'notloop' in request.POST:
+            return render(request,'notloop.html',context)
+
+class LoopView(TemplateView):
+    template_name = 'loop.html'
+
+    def get(self, request, *args, **kwargs):
+        Username = request.POST['name']
+        Searchcount = request.POST['searchcount']
+        total_score = Twitter(Username,Searchcount)
+        negapozi_word = negapozi(negapozi_score=total_score)
+        context = {
+            'name':Username,
+            'searchcount':Searchcount,
+            'message':negapozi_word,
+            'negapozi':total_score
+        }
+        return 'loop.html'
+
+class NotLoopView(TemplateView):
+    template_name = 'notloop.html'
+
+class AccessView(TemplateView):
+    template_name = 'access.html'
+
+class CareView(TemplateView):
+    template_name = 'care.html'
+
+class FireView(TemplateView):
+    template_name = 'fire.html'
+
+class SystemView(TemplateView):
+    template_name = 'system.html'
     
-
-
+class HowtouseView(TemplateView):
+    template_name = 'howtouse.html'
 # Create your views here.

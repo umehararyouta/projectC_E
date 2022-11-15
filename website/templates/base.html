@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'main.css' %}">
+        {% block headtitle %}
+        <title>炎上検知</title >
+        {% endblock %}
+    </head>
+    <body>
+        <div id="main">
+            <header class="page-header wrapper">
+                <h1>炎上防止サイト</h1>
+                <nav>
+                    <ul class="home-nav">
+                        <li>
+                            <a href="/index">ホーム</a>
+                        </li>
+                        <li>
+                            <a href="/fire">炎上について</a>
+                        </li>
+                        <li>
+                            <a href="/care">炎上の対処法</a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+            <div class="wrapper">
+                {% block maintitle %}
+                <h2 class="page-title">検索ホーム</h2>
+                {% endblock  %}
+            </div class="wrapper">
+            <div class="main-contents wrapper">
+                <article>
+                    {% block body_main %}
+                    <p>404 not found</p>
+                    {% endblock %}
+                </article>
+                <aside>
+                    <h3 class="sub-title">一覧</h3>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="/howtouse">使い方</a>
+                        </li>
+                        <li>
+                            <a href="/system">システム内容</a>
+                        </li>
+                        <li>
+                            <a href="/access">制作関係者</a>
+                        </li>
+                    </ul>
+                    <h3 class="sub-title">サブタイトル</h3>
+                    <p>サブタイトルコメント</p>
+                </aside>
+            </div class="main-contents wrapper">
+        </div id="main">
+    </body>
+</html>

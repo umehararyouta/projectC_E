@@ -1,24 +1,28 @@
-<!DOCTYPE html>
-<html>
-<body>
-  <form action="" method="post">
-    {% csrf_token %}
-    <div>
-      <label for="name">名前</label>
-      <input type="text" id="name" name="name" value="{{ name }}">
-    </div>
-    <div>
-      <label for="searchcount">検索件数</label>
-      <input type="text" id="searchcount" name="searchcount" value="{{ searchcount }}">
-    </div>
-    <div>
-      <label for="loopyn">このアカウントを監視しますか？</label>
-      <input type="checkbox" id="loopyn" name="loopyn" value="{{ loopyn }}">
-    </div>
-    <input type="submit" value="送信する">
-  </form>
-  <p>{{negapozi}}</p>
-  <p>{{message}}<p>
-  <p></p>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block body_main %}
+  <body>
+    <form action="" method="post">
+      {% csrf_token %}
+      <div>
+        <label for="name">名前</label>
+        <input type="text" id="name" name="name" value="{{ name }}">
+      </div>
+      <div>
+        <label for="searchcount">検索件数</label>
+        <input type="text" id="searchcount" name="searchcount" value="{{ searchcount }}">
+      </div>
+      <p>
+        <input type="submit" value="検索する" name="notloop">
+        <input type="submit" value="監視する" name="loop">
+      </p>
+    </form>
+    <p>
+      名前の欄にはTwitterアカウントのユーザーネームを入れることが出来ます。<br>
+      検索件数には検索したいリプライの数を入れることが出来ます。
+    </p>
+    <p>
+      詳しい説明は使い方ページを参照してください。<br>
+      また、システム動作方法はシステム内容を参照してください。
+    </p>
+{% endblock %}

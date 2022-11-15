@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block  maintitle%}
+<h2 class="page-title">使い方</h2>
+{% endblock  %}
+{% block body_main %}
+{% load static %}
+<p>名前と検索する件数を入力すると、そのユーザーが炎上しているかどうかを調べてくれます。<br>
+    名前の欄にはTwitterアカウントのユーザーネーム<br>
+    検索件数には数字を入力することで検索することが出来ます。
+</p>
+<div class="howtouse_photo">
+    <img src="{% static 'serchpage.png' %}">
+</div>
+<p>
+    検索するボタンを押すとユーザーを一回だけ調べることが出来ます。<br>
+    監視するボタンを押すとユーザーを調べたのち、5分間に一度自動で検索してくれます。
+</p>
+<div class="howtouse_photo">
+</div>
+<p>
+    (検索結果の画像)
+</p>
+<p>
+    その際そのユーザーが炎上していたらこのようにプッシュ通知が送信されます。
+</p>
+<p>
+    (プッシュ通知の画像)
+</p>
+{% endblock %}
